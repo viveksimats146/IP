@@ -1,0 +1,39 @@
+
+<html>
+<head>
+<style>
+body {
+  font-family: Arial;
+  text-align: center;
+  background: #fff0f5;
+}
+h2 { color: deeppink; }
+button {
+  padding: 10px;
+  background: deeppink;
+  color: white;
+  border: none;
+}
+</style>
+</head>
+<body>
+
+<h2>BlossomGifts</h2>
+
+<h3>Rose Bouquet - Rs.500</h3>
+<button onclick="order('Rose Bouquet')">Order</button>
+
+<h3>Gift Basket - Rs.800</h3>
+<button onclick="order('Gift Basket')">Order</button>
+
+<p id="result"></p>
+
+<script>
+function order(item) {
+  document.getElementById("result").innerHTML =
+    item + " ordered successfully";
+}
+</script>
+
+</body>
+</html>

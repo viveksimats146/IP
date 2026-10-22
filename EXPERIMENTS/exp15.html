@@ -1,0 +1,44 @@
+
+<html>
+<head>
+<style>
+body {
+  font-family: Arial;
+  text-align: center;
+  background: #e3f2fd;
+}
+h2 { color: navy; }
+input, button {
+  padding: 10px;
+  margin: 5px;
+}
+button {
+  background: navy;
+  color: white;
+  border: none;
+}
+</style>
+</head>
+<body>
+
+<h2>EasyToll Payment</h2>
+
+<input id="vehicle" placeholder="Vehicle Number"><br>
+<input id="amount" type="number" placeholder="Toll Amount"><br>
+
+<button onclick="pay()">Pay Toll</button>
+
+<p id="result"></p>
+
+<script>
+function pay() {
+  let v = document.getElementById("vehicle").value;
+  let a = document.getElementById("amount").value;
+
+  document.getElementById("result").innerHTML =
+    "Toll paid for " + v + ". Amount: Rs." + a;
+}
+</script>
+
+</body>
+</html>

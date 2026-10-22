@@ -1,0 +1,39 @@
+
+<html>
+<head>
+<style>
+body {
+  font-family: Arial;
+  text-align: center;
+  background: #e8f5e9;
+}
+h2 { color: green; }
+button {
+  padding: 10px;
+  background: green;
+  color: white;
+  border: none;
+}
+</style>
+</head>
+<body>
+
+<h2>ReNewMarket</h2>
+
+<h3>Used Laptop - Rs.10000</h3>
+<button onclick="buy('Used Laptop')">Buy</button>
+
+<h3>Used Chair - Rs.500</h3>
+<button onclick="buy('Used Chair')">Buy</button>
+
+<p id="result"></p>
+
+<script>
+function buy(item) {
+  document.getElementById("result").innerHTML =
+    item + " selected successfully";
+}
+</script>
+
+</body>
+</html>

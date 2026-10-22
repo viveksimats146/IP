@@ -1,0 +1,28 @@
+
+<html>
+<head>
+<style>
+body { text-align: center; font-family: Arial; background: #e8f5e9; }
+h2 { color: green; }
+input, button { padding: 10px; margin: 5px; }
+button { background: green; color: white; }
+</style>
+</head>
+<body>
+<h2>Home Finder</h2>
+
+<input id="place" placeholder="Enter location">
+<button onclick="search()">Search</button>
+
+<p id="result"></p>
+
+<script>
+function search() {
+  let p = document.getElementById("place").value;
+
+  document.getElementById("result").innerHTML =
+    "House available in " + p;
+}
+</script>
+</body>
+</html>
