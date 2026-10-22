@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>StyleHub Fashion</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#faf8f4;
+}
+
+header{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+background:#ffffff;
+box-shadow:0 3px 15px rgba(0,0,0,.1);
+position:sticky;
+top:0;
+z-index:1000;
+
+}
+
+.logo{
+
+font-size:30px;
+font-weight:bold;
+color:#b8860b;
+
+}
+
+nav a{
+
+text-decoration:none;
+color:#333;
+margin-left:25px;
+font-weight:bold;
+
+}
+
+.hero{
+
+height:95vh;
+display:flex;
+justify-content:space-around;
+align-items:center;
+padding:60px;
+background:linear-gradient(to right,#fffdf8,#fdf2d0);
+
+}
+
+.hero-text{
+
+width:45%;
+
+}
+
+.hero-text h1{
+
+font-size:62px;
+color:#b8860b;
+margin-bottom:20px;
+
+}
+
+.hero-text p{
+
+font-size:20px;
+color:#555;
+margin-bottom:30px;
+
+}
+
+.hero-text button{
+
+padding:15px 35px;
+background:#b8860b;
+color:white;
+border:none;
+border-radius:35px;
+font-size:18px;
+cursor:pointer;
+
+}
+
+.hero img{
+
+width:420px;
+border-radius:20px;
+box-shadow:0 10px 20px rgba(0,0,0,.2);
+
+}
+
+section{
+
+padding:70px;
+
+}
+
+.title{
+
+text-align:center;
+font-size:42px;
+color:#b8860b;
+margin-bottom:40px;
+
+}
+
+.categories{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+
+}
+
+.category{
+
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+transition:.4s;
+
+}
+
+.category:hover{
+
+transform:translateY(-8px);
+
+}
+
+.products{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+
+}
+
+.product{
+
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+}
+
+.product img{
+
+width:100%;
+height:250px;
+object-fit:cover;
+
+}
+
+.info{
+
+padding:20px;
+text-align:center;
+
+}
+
+.price{
+
+font-size:24px;
+color:#b8860b;
+font-weight:bold;
+margin:15px 0;
+
+}
+
+.info button{
+
+padding:12px 30px;
+background:#b8860b;
+color:white;
+border:none;
+border-radius:30px;
+cursor:pointer;
+
+}
+
+@media(max-width:900px){
+
+header{
+
+flex-direction:column;
+
+}
+
+nav{
+
+margin-top:15px;
+
+}
+
+.hero{
+
+flex-direction:column;
+text-align:center;
+
+}
+
+.hero-text{
+
+width:100%;
+margin-bottom:30px;
+
+}
+
+.hero img{
+
+width:90%;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+👗 StyleHub
+
+</div>
+
+<nav>
+
+<a href="#">Home</a>
+
+<a href="#categories">Categories</a>
+
+<a href="#products">Collections</a>
+
+<a href="#wishlist">Wishlist</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+</header>
+
+<div class="hero">
+
+<div class="hero-text">
+
+<h1>
+
+Wear Your Style
+
+</h1>
+
+<p>
+
+Explore premium fashion collections for men, women and kids with exciting discounts.
+
+</p>
+
+<button onclick="shopFashion()">
+
+Shop Collection
+
+</button>
+
+</div>
+
+<div>
+
+<img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=80">
+
+</div>
+
+</div>
+
+<section id="categories">
+
+<h1 class="title">
+
+Fashion Categories
+
+</h1>
+
+<div class="categories">
+
+<div class="category">
+
+<h2>👔 Men</h2>
+
+<p>Casual, Formal & Ethnic Wear</p>
+
+</div>
+
+<div class="category">
+
+<h2>👗 Women</h2>
+
+<p>Dresses, Sarees & Western Wear</p>
+
+</div>
+
+<div class="category">
+
+<h2>👟 Footwear</h2>
+
+<p>Shoes, Sandals & Sneakers</p>
+
+</div>
+
+<div class="category">
+
+<h2>👜 Accessories</h2>
+
+<p>Bags, Watches & Sunglasses</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="products">
+
+<h1 class="title">
+
+Trending Collections
+
+</h1>
+
+<div class="products">
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=80">
+
+<div class="info">
+
+<h2>Men's Jacket</h2>
+
+<p>Premium Winter Collection</p>
+
+<div class="price">
+
+₹2,499
+
+</div>
+
+<button onclick="addWishlist('Men Jacket')">
+
+Add to Wishlist
+
+</button>
+
+</div>
+
+</div>
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80">
+
+<div class="info">
+
+<h2>Women's Dress</h2>
+
+<p>Elegant Party Wear</p>
+
+<div class="price">
+
+₹1,999
+
+</div>
+
+<button onclick="addWishlist('Women Dress')">
+
+Add to Wishlist
+
+</button>
+
+</div>
+
+</div>
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80">
+
+<div class="info">
+
+<h2>Running Shoes</h2>
+
+<p>Comfort & Performance</p>
+
+<div class="price">
+
+₹3,299
+
+</div>
+
+<button onclick="addWishlist('Running Shoes')">
+
+Add to Wishlist
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section id="wishlist">
+
+<h1 class="title">
+
+Shopping Cart & Checkout
+
+</h1>
+
+<div style="max-width:900px;margin:auto;background:white;padding:35px;border-radius:20px;box-shadow:0 5px 15px rgba(0,0,0,.15);">
+
+<input type="text" placeholder="Customer Name" style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
+
+<input type="email" placeholder="Email Address" style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
+
+<select style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
+
+<option>Select Product</option>
+
+<option>Men's Jacket</option>
+
+<option>Women's Dress</option>
+
+<option>Running Shoes</option>
+
+</select>
+
+<select style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
+
+<option>Select Size</option>
+
+<option>S</option>
+
+<option>M</option>
+
+<option>L</option>
+
+<option>XL</option>
+
+</select>
+
+<input type="number" placeholder="Quantity" style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
+
+<textarea rows="4" placeholder="Delivery Address" style="width:100%;padding:15px;margin-bottom:20px;border:1px solid #ddd;border-radius:10px;"></textarea>
+
+<button onclick="checkout()" style="width:100%;padding:15px;background:#b8860b;color:white;border:none;border-radius:10px;font-size:18px;font-weight:bold;cursor:pointer;">
+
+Proceed to Checkout
+
+</button>
+
+</div>
+
+</section>
+
+<section>
+
+<h1 class="title">
+
+Flash Sale
+
+</h1>
+
+<div class="categories">
+
+<div class="category">
+
+<h2>🎁 50% OFF</h2>
+
+<p>
+
+Men's Fashion Collection
+
+</p>
+
+</div>
+
+<div class="category">
+
+<h2>👗 Buy 2 Get 1</h2>
+
+<p>
+
+Women's Dresses
+
+</p>
+
+</div>
+
+<div class="category">
+
+<h2>👟 40% OFF</h2>
+
+<p>
+
+Sports Shoes
+
+</p>
+
+</div>
+
+<div class="category">
+
+<h2>👜 30% OFF</h2>
+
+<p>
+
+Fashion Accessories
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h1 class="title">
+
+Customer Reviews
+
+</h1>
+
+<div class="products">
+
+<div class="product">
+
+<div class="info">
+
+<h2>★★★★★</h2>
+
+<p>
+
+"Excellent quality and fast delivery."
+
+</p>
+
+<b>- Priya</b>
+
+</div>
+
+</div>
+
+<div class="product">
+
+<div class="info">
+
+<h2>★★★★★</h2>
+
+<p>
+
+"Beautiful collection at affordable prices."
+
+</p>
+
+<b>- Rahul</b>
+
+</div>
+
+</div>
+
+<div class="product">
+
+<div class="info">
+
+<h2>★★★★☆</h2>
+
+<p>
+
+"Highly recommended fashion store."
+
+</p>
+
+<b>- Sneha</b>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h1 class="title">
+
+Contact Us
+
+</h1>
+
+<div style="max-width:900px;margin:auto;background:white;padding:35px;border-radius:20px;box-shadow:0 5px 15px rgba(0,0,0,.15);">
+
+<input type="text" placeholder="Your Name" style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
+
+<input type="email" placeholder="Email Address" style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
+
+<textarea rows="5" placeholder="Your Message" style="width:100%;padding:15px;margin-bottom:20px;border:1px solid #ddd;border-radius:10px;"></textarea>
+
+<button onclick="sendMessage()" style="width:100%;padding:15px;background:#b8860b;color:white;border:none;border-radius:10px;font-size:18px;font-weight:bold;cursor:pointer;">
+
+Send Message
+
+</button>
+
+</div>
+
+</section>
+
+<footer style="background:#b8860b;color:white;text-align:center;padding:30px;">
+
+<h2>
+
+👗 StyleHub Fashion
+
+</h2>
+
+<br>
+
+<p>
+
+📍 Chennai, Tamil Nadu
+
+</p>
+
+<p>
+
+📧 support@stylehub.com
+
+</p>
+
+<p>
+
+☎ +91 9876543210
+
+</p>
+
+<br>
+
+<p>
+
+© 2026 StyleHub Fashion | All Rights Reserved
+
+</p>
+
+</footer>
+
+<script>
+
+function shopFashion(){
+
+alert("Welcome to StyleHub Fashion!");
+
+}
+
+function addWishlist(product){
+
+alert(product + " added to your Wishlist!");
+
+}
+
+function checkout(){
+
+alert("Order Placed Successfully!");
+
+}
+
+function sendMessage(){
+
+alert("Thank you! We will contact you soon.");
+
+}
+
+</script>
+
+</body>
+
+</html>

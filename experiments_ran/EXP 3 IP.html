@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bus Ticket Booking</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:url("https://images.unsplash.com/photo-1509749837427-ac94a2553d0e?auto=format&fit=crop&w=1600&q=80");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+color:white;
+}
+
+body::before{
+content:'';
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.65);
+z-index:-1;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+padding:20px 60px;
+background:rgba(0,0,0,.5);
+position:sticky;
+top:0;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#00ffcc;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+}
+
+nav ul li{
+margin-left:25px;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-weight:bold;
+}
+
+.hero{
+height:90vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:60px;
+}
+
+.hero p{
+margin:20px 0;
+font-size:20px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 35px;
+background:#00ffcc;
+color:black;
+text-decoration:none;
+border-radius:30px;
+font-weight:bold;
+}
+
+section{
+padding:60px;
+}
+
+.title{
+text-align:center;
+font-size:38px;
+margin-bottom:40px;
+}
+
+.search,.booking{
+max-width:900px;
+margin:auto;
+background:rgba(255,255,255,.15);
+padding:30px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+}
+
+.search input,
+.booking input,
+.booking select{
+width:100%;
+padding:15px;
+margin:10px 0;
+border:none;
+border-radius:10px;
+}
+
+button{
+padding:15px 30px;
+border:none;
+background:#00ffcc;
+font-weight:bold;
+border-radius:30px;
+cursor:pointer;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.card{
+background:rgba(255,255,255,.15);
+padding:20px;
+border-radius:20px;
+text-align:center;
+}
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:15px;
+margin-bottom:15px;
+}
+
+footer{
+background:black;
+text-align:center;
+padding:20px;
+margin-top:50px;
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">🚌 BusGo</div>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#search">Search</a></li>
+<li><a href="#booking">Booking</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<div>
+
+<h1>Online Bus Ticket Booking</h1>
+
+<p>Book your bus tickets quickly and travel comfortably.</p>
+
+<a href="#search" class="btn">Book Now</a>
+
+</div>
+
+</section>
+
+<section id="search">
+
+<h1 class="title">Search Bus</h1>
+
+<div class="search">
+
+<input type="text" placeholder="From">
+
+<input type="text" placeholder="To">
+
+<input type="date">
+
+<button onclick="searchBus()">Search Buses</button>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=700&q=80">
+
+<h2>Volvo AC</h2>
+
+<p>Available Seats: 18</p>
+
+<p>Fare: ₹850</p>
+
+<button onclick="book('Volvo AC')">Book</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1518546305927-5a555bb7020d?auto=format&fit=crop&w=700&q=80">
+
+<h2>Sleeper Coach</h2>
+
+<p>Available Seats: 10</p>
+
+<p>Fare: ₹1200</p>
+
+<button onclick="book('Sleeper Coach')">Book</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=700&q=80">
+
+<h2>Express Bus</h2>
+
+<p>Available Seats: 22</p>
+
+<p>Fare: ₹650</p>
+
+<button onclick="book('Express Bus')">Book</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="booking">
+
+<h1 class="title">Passenger Details</h1>
+
+<div class="booking">
+
+<input type="text" placeholder="Passenger Name">
+
+<input type="text" placeholder="Phone Number">
+
+<select>
+
+<option>Select Seat</option>
+
+<option>Window Seat</option>
+
+<option>Middle Seat</option>
+
+<option>Aisle Seat</option>
+
+</select>
+
+<button onclick="confirmBooking()">Confirm Booking</button>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h1 class="title">Contact</h1>
+
+<div class="booking">
+
+<input type="text" placeholder="Your Name">
+
+<input type="email" placeholder="Email">
+
+<input type="text" placeholder="Message">
+
+<button onclick="send()">Send</button>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>🚌 BusGo Booking System</h2>
+
+<p>Email: support@busgo.com</p>
+
+<p>Phone: +91 9876543210</p>
+
+<p>© 2026 All Rights Reserved</p>
+
+</footer>
+
+<script>
+
+function searchBus(){
+
+alert("Searching Available Buses...");
+
+}
+
+function book(bus){
+
+alert(bus+" Selected");
+
+}
+
+function confirmBooking(){
+
+alert("Ticket Booked Successfully!");
+
+}
+
+function send(){
+
+alert("Message Sent Successfully!");
+
+}
+
+</script>
+
+</body>
+</html>

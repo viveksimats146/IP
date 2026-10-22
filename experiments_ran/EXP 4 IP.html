@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Train Ticket Reservation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:url("https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=1600&q=80") no-repeat center center/cover;
+color:white;
+}
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.65);
+z-index:-1;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+background:rgba(0,0,0,.5);
+position:sticky;
+top:0;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#00ffcc;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+}
+
+nav ul li{
+margin-left:25px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+font-weight:bold;
+}
+
+.hero{
+height:90vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:60px;
+}
+
+.hero p{
+font-size:20px;
+margin:20px 0;
+}
+
+.btn{
+display:inline-block;
+padding:15px 35px;
+background:#00ffcc;
+color:black;
+text-decoration:none;
+border-radius:30px;
+font-weight:bold;
+}
+
+section{
+padding:60px;
+}
+
+.title{
+text-align:center;
+font-size:38px;
+margin-bottom:35px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+background:rgba(255,255,255,.15);
+padding:30px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+}
+
+input,select{
+width:100%;
+padding:15px;
+margin:10px 0;
+border:none;
+border-radius:10px;
+}
+
+button{
+padding:15px 30px;
+background:#00ffcc;
+border:none;
+border-radius:30px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+.card{
+background:rgba(255,255,255,.15);
+padding:20px;
+border-radius:20px;
+text-align:center;
+}
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:15px;
+margin-bottom:15px;
+}
+
+footer{
+background:black;
+text-align:center;
+padding:20px;
+margin-top:50px;
+}
+
+@media(max-width:768px){
+nav{
+flex-direction:column;
+}
+nav ul{
+margin-top:15px;
+}
+.hero h1{
+font-size:40px;
+}
+}
+</style>
+
+</head>
+<body>
+
+<nav>
+
+<div class="logo">🚆 TrainExpress</div>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#search">Search</a></li>
+<li><a href="#book">Book</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<div>
+
+<h1>Train Ticket Reservation</h1>
+
+<p>Fast, Safe and Easy Online Train Ticket Booking</p>
+
+<a href="#search" class="btn">Book Ticket</a>
+
+</div>
+
+</section>
+
+<section id="search">
+
+<h1 class="title">Search Train</h1>
+
+<div class="container">
+
+<input type="text" placeholder="From Station">
+
+<input type="text" placeholder="To Station">
+
+<input type="date">
+
+<button onclick="searchTrain()">Search Trains</button>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=700&q=80">
+
+<h2>Rajdhani Express</h2>
+
+<p>Available Seats : 40</p>
+
+<p>Fare : ₹1200</p>
+
+<button onclick="bookTrain('Rajdhani Express')">Book</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=700&q=80">
+
+<h2>Shatabdi Express</h2>
+
+<p>Available Seats : 25</p>
+
+<p>Fare : ₹950</p>
+
+<button onclick="bookTrain('Shatabdi Express')">Book</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=80">
+
+<h2>Duronto Express</h2>
+
+<p>Available Seats : 18</p>
+
+<p>Fare : ₹1500</p>
+
+<button onclick="bookTrain('Duronto Express')">Book</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="book">
+
+<h1 class="title">Passenger Details</h1>
+
+<div class="container">
+
+<input type="text" placeholder="Passenger Name">
+
+<input type="number" placeholder="Age">
+
+<select>
+<option>Select Class</option>
+<option>Sleeper</option>
+<option>3A</option>
+<option>2A</option>
+<option>1A</option>
+</select>
+
+<input type="text" placeholder="Mobile Number">
+
+<button onclick="confirmBooking()">Confirm Booking</button>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h1 class="title">Contact Us</h1>
+
+<div class="container">
+
+<input type="text" placeholder="Your Name">
+
+<input type="email" placeholder="Email">
+
+<input type="text" placeholder="Message">
+
+<button onclick="sendMessage()">Send</button>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>🚆 TrainExpress Reservation System</h2>
+
+<p>Email : support@trainexpress.com</p>
+
+<p>Phone : +91 9876543210</p>
+
+<p>© 2026 All Rights Reserved</p>
+
+</footer>
+
+<script>
+
+function searchTrain(){
+alert("Searching Available Trains...");
+}
+
+function bookTrain(train){
+alert(train + " Selected Successfully!");
+}
+
+function confirmBooking(){
+alert("Ticket Booked Successfully!");
+}
+
+function sendMessage(){
+alert("Message Sent Successfully!");
+}
+
+</script>
+
+</body>
+</html>

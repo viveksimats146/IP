@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Glow Beauty Salon</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#fff5f8;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+background:linear-gradient(90deg,#ff4f81,#b83280);
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo{
+font-size:30px;
+font-weight:bold;
+color:white;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+margin-left:25px;
+font-weight:bold;
+}
+
+.hero{
+display:flex;
+justify-content:space-around;
+align-items:center;
+padding:70px;
+background:linear-gradient(to right,#ffe4ec,#fff);
+min-height:90vh;
+}
+
+.hero-text{
+width:45%;
+}
+
+.hero-text h1{
+font-size:58px;
+color:#b83280;
+margin-bottom:20px;
+}
+
+.hero-text p{
+font-size:18px;
+color:#555;
+margin-bottom:25px;
+}
+
+.hero-text button{
+padding:15px 35px;
+background:#ff4f81;
+color:white;
+border:none;
+border-radius:30px;
+font-size:18px;
+cursor:pointer;
+}
+
+.hero img{
+width:420px;
+border-radius:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+section{
+padding:70px;
+}
+
+.title{
+text-align:center;
+font-size:40px;
+color:#b83280;
+margin-bottom:40px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.info{
+padding:20px;
+text-align:center;
+}
+
+.price{
+font-size:24px;
+font-weight:bold;
+color:#ff4f81;
+margin:15px 0;
+}
+
+.info button{
+padding:12px 30px;
+background:#ff4f81;
+color:white;
+border:none;
+border-radius:30px;
+cursor:pointer;
+}
+
+@media(max-width:900px){
+
+header{
+flex-direction:column;
+}
+
+nav{
+margin-top:15px;
+}
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-text{
+width:100%;
+margin-bottom:30px;
+}
+
+.hero img{
+width:90%;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+💄 Glow Beauty
+
+</div>
+
+<nav>
+
+<a href="#">Home</a>
+
+<a href="#services">Services</a>
+
+<a href="#stylists">Stylists</a>
+
+<a href="#booking">Booking</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+</header>
+
+<div class="hero">
+
+<div class="hero-text">
+
+<h1>
+
+Beauty Begins Here
+
+</h1>
+
+<p>
+
+Book salon appointments with professional beauticians and enjoy premium beauty services.
+
+</p>
+
+<button onclick="exploreSalon()">
+
+Book Appointment
+
+</button>
+
+</div>
+
+<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=900&q=80">
+
+</div>
+
+<section id="services">
+
+<h1 class="title">
+
+Our Beauty Services
+
+</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=800&q=80">
+
+<div class="info">
+
+<h2>Hair Styling</h2>
+
+<p>Professional hair styling and cutting.</p>
+
+<div class="price">₹999</div>
+
+<button onclick="bookService('Hair Styling')">
+
+Book
+
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80">
+
+<div class="info">
+
+<h2>Facial Treatment</h2>
+
+<p>Glow skin with premium facial care.</p>
+
+<div class="price">₹1499</div>
+
+<button onclick="bookService('Facial Treatment')">
+
+Book
+
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=800&q=80">
+
+<div class="info">
+
+<h2>Bridal Makeup</h2>
+
+<p>Luxury bridal makeover packages.</p>
+
+<div class="price">₹5999</div>
+
+<button onclick="bookService('Bridal Makeup')">
+
+Book
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="stylists">
+
+<h1 class="title">
+
+Meet Our Stylists
+
+</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<div class="info">
+
+<h2>👩 Priya</h2>
+
+<p>Hair Specialist</p>
+
+<p>⭐ 4.9/5 Rating</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="info">
+
+<h2>👩 Sneha</h2>
+
+<p>Makeup Artist</p>
+
+<p>⭐ 4.8/5 Rating</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="info">
+
+<h2>👩 Anjali</h2>
+
+<p>Skin Care Expert</p>
+
+<p>⭐ 5.0/5 Rating</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section id="booking">
+
+<h1 class="title">
+
+Book Your Appointment
+
+</h1>
+
+<div style="max-width:900px;margin:auto;background:white;padding:35px;border-radius:20px;box-shadow:0 8px 20px rgba(0,0,0,.15);">
+
+<input type="text" placeholder="Full Name" style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
+
+<input type="email" placeholder="Email Address" style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
+
+<input type="tel" placeholder="Mobile Number" style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
+
+<select style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
+
+<option>Select Service</option>
+<option>Hair Styling</option>
+<option>Facial Treatment</option>
+<option>Bridal Makeup</option>
+
+</select>
+
+<select style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
+
+<option>Select Stylist</option>
+<option>Priya</option>
+<option>Sneha</option>
+<option>Anjali</option>
+
+</select>
+
+<input type="date" style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
+
+<input type="time" style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
+
+<select style="width:100%;padding:15px;margin-bottom:20px;border:1px solid #ddd;border-radius:10px;">
+
+<option>Payment Method</option>
+<option>Cash</option>
+<option>Stripe</option>
+<option>PayPal</option>
+
+</select>
+
+<button onclick="bookAppointment()" style="width:100%;padding:15px;background:#ff4f81;color:white;border:none;border-radius:10px;font-size:18px;font-weight:bold;cursor:pointer;">
+
+Confirm Appointment
+
+</button>
+
+</div>
+
+</section>
+
+<section>
+
+<h1 class="title">
+
+Reservation Features
+
+</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<div class="info">
+
+<h2>📅 Calendar</h2>
+
+<p>
+
+View available dates and appointment slots.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="info">
+
+<h2>✏ Edit Booking</h2>
+
+<p>
+
+Reschedule or cancel appointments anytime.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="info">
+
+<h2>💳 Secure Payment</h2>
+
+<p>
+
+Pay using Cash, Stripe or PayPal.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h1 class="title">
+
+Customer Reviews
+
+</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<div class="info">
+
+<h2>★★★★★</h2>
+
+<p>
+
+"Excellent makeup service and friendly staff."
+
+</p>
+
+<b>- Aisha</b>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="info">
+
+<h2>★★★★★</h2>
+
+<p>
+
+"Very professional hairstylist. Highly recommended."
+
+</p>
+
+<b>- Kavya</b>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="info">
+
+<h2>★★★★☆</h2>
+
+<p>
+
+"Beautiful salon with affordable prices."
+
+</p>
+
+<b>- Meera</b>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h1 class="title">
+
+Contact Us
+
+</h1>
+
+<div style="max-width:900px;margin:auto;background:white;padding:35px;border-radius:20px;box-shadow:0 8px 20px rgba(0,0,0,.15);">
+
+<input type="text" placeholder="Your Name" style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
+
+<input type="email" placeholder="Email Address" style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
+
+<textarea rows="5" placeholder="Your Message" style="width:100%;padding:15px;margin-bottom:20px;border:1px solid #ddd;border-radius:10px;"></textarea>
+
+<button onclick="sendMessage()" style="width:100%;padding:15px;background:#ff4f81;color:white;border:none;border-radius:10px;font-size:18px;font-weight:bold;cursor:pointer;">
+
+Send Message
+
+</button>
+
+</div>
+
+</section>
+
+<footer style="background:#b83280;color:white;text-align:center;padding:30px;">
+
+<h2>💄 Glow Beauty Salon</h2>
+
+<br>
+
+<p>📍 Chennai, Tamil Nadu</p>
+
+<p>📧 glowbeauty@email.com</p>
+
+<p>☎ +91 9876543210</p>
+
+<br>
+
+<p>© 2026 Glow Beauty Salon | All Rights Reserved</p>
+
+</footer>
+
+<script>
+
+function exploreSalon(){
+
+alert("Welcome to Glow Beauty Salon!");
+
+}
+
+function bookService(service){
+
+alert(service + " Selected Successfully!");
+
+}
+
+function bookAppointment(){
+
+alert("Your Appointment has been Booked Successfully!");
+
+}
+
+function sendMessage(){
+
+alert("Thank you! We will contact you soon.");
+
+}
+
+</script>
+
+</body>
+</html>
