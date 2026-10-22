@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Marks Details</title>
+</head>
+<body>
+    <h2>10 Students Subject Marks Details</h2>
+
+    <script>
+        let students = [
+            { name: "Student 1", marks: [85, 90, 78, 88, 92] },
+            { name: "Student 2", marks: [70, 75, 80, 65, 72] },
+            { name: "Student 3", marks: [95, 92, 90, 96, 94] },
+            { name: "Student 4", marks: [60, 55, 65, 70, 58] },
+            { name: "Student 5", marks: [45, 50, 55, 48, 52] },
+            { name: "Student 6", marks: [88, 84, 91, 87, 90] },
+            { name: "Student 7", marks: [35, 40, 30, 45, 38] },
+            { name: "Student 8", marks: [76, 82, 79, 85, 80] },
+            { name: "Student 9", marks: [90, 89, 94, 92, 88] },
+            { name: "Student 10", marks: [65, 70, 68, 72, 75] }
+        ];
+
+        document.write("<table border='1' cellpadding='8'>");
+        document.write("<tr><th>Name</th><th>Sub 1</th><th>Sub 2</th>");
+        document.write("<th>Sub 3</th><th>Sub 4</th><th>Sub 5</th>");
+        document.write("<th>Total</th><th>Average</th><th>Result</th></tr>");
+
+        students.forEach(function(student) {
+            let total = 0;
+
+            student.marks.forEach(function(mark) {
+                total += mark;
+            });
+
+            let average = total / student.marks.length;
+            let result = student.marks.every(mark => mark >= 35)
+                ? "Pass" : "Fail";
+
+            document.write("<tr>");
+            document.write("<td>" + student.name + "</td>");
+
+            student.marks.forEach(function(mark) {
+                document.write("<td>" + mark + "</td>");
+            });
+
+            document.write("<td>" + total + "</td>");
+            document.write("<td>" + average.toFixed(2) + "</td>");
+            document.write("<td>" + result + "</td>");
+            document.write("</tr>");
+        });
+
+        document.write("</table>");
+    </script>
+</body>
+</html>

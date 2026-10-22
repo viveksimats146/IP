@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Layout Debugging</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        header, footer {
+            background: #24527a;
+            color: white;
+            text-align: center;
+            padding: 18px;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 15px;
+        }
+        .box {
+            padding: 20px;
+            border: 2px solid #24527a;
+            border-radius: 8px;
+            overflow-wrap: anywhere;
+        }
+        .main-content {
+            flex: 2;
+            min-width: 0;
+        }
+        .sidebar {
+            flex: 1;
+            min-width: 0;
+            background: #eaf2f8;
+        }
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column;
+                gap: 12px;
+                margin: 10px auto;
+                padding: 10px;
+            }
+            .box {
+                padding: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CSS Layout Debugging</h1>
+    </header>
+    <main class="container">
+        <section class="box main-content">
+            <h2>Main Content</h2>
+            <p>
+                This section contains the main webpage information.
+                Its width adjusts according to the available space.
+            </p>
+        </section>
+        <aside class="box sidebar">
+            <h2>Sidebar</h2>
+            <p>
+                This sidebar moves below the main content on
+                smaller screens to prevent overlapping.
+            </p>
+        </aside>
+    </main>
+    <footer>
+        <p>Responsive Layout Example</p>
+    </footer>
+</body>
+</html>

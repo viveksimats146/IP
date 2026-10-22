@@ -1,0 +1,30 @@
+
+<html>
+<head>
+<style>
+body { font-family: Arial; text-align: center; background: #e0f7fa; }
+h2 { color: teal; }
+input, select, button { padding: 10px; margin: 5px; }
+button { background: teal; color: white; }
+</style>
+</head>
+<body>
+<h2>Beauty Parlour Booking</h2>
+<input id="name" placeholder="Enter Name"><br>
+<select id="service">
+<option>Haircut</option>
+<option>Facial</option>
+<option>Hair Styling</option>
+</select><br>
+<button onclick="book()">Book Appointment</button>
+<p id="result"></p>
+<script>
+function book() {
+let n = document.getElementById("name").value;
+let s = document.getElementById("service").value;
+document.getElementById("result").innerHTML =
+"Appointment booked for " + n + ": " + s;
+}
+</script>
+</body>
+</html>

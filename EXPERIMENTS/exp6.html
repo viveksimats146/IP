@@ -1,0 +1,30 @@
+
+<html>
+<head>
+<style>
+body { font-family: Arial; text-align: center; background: #fce4ec; }
+h2 { color: deeppink; }
+input, select, button { padding: 10px; margin: 5px; }
+button { background: deeppink; color: white; }
+</style>
+</head>
+<body>
+<h2>Cake Ordering System</h2>
+<input id="name" placeholder="Enter Name"><br>
+<select id="cake">
+<option>Chocolate Cake</option>
+<option>Vanilla Cake</option>
+<option>Black Forest Cake</option>
+</select><br>
+<button onclick="order()">Order Cake</button>
+<p id="result"></p>
+<script>
+function order() {
+let n = document.getElementById("name").value;
+let c = document.getElementById("cake").value;
+document.getElementById("result").innerHTML =
+"Cake ordered by " + n + ": " + c;
+}
+</script>
+</body>
+</html>

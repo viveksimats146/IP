@@ -1,0 +1,26 @@
+
+<html>
+<head>
+<style>
+body { font-family: Arial; text-align: center; background: #e8f5e9; }
+h2 { color: green; }
+input, button { padding: 10px; margin: 5px; }
+button { background: green; color: white; }
+</style>
+</head>
+<body>
+<h2>Train Reservation</h2>
+<input id="name" placeholder="Enter Name"><br>
+<input id="place" placeholder="Destination"><br>
+<button onclick="book()">Book Ticket</button>
+<p id="result"></p>
+<script>
+function book() {
+let n = document.getElementById("name").value;
+let p = document.getElementById("place").value;
+document.getElementById("result").innerHTML =
+"Ticket booked for " + n + " to " + p;
+}
+</script>
+</body>
+</html>

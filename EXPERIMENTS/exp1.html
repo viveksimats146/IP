@@ -1,0 +1,25 @@
+
+<html>
+<head>
+<style>
+body { font-family: Arial; text-align: center; background: #eee; }
+h2 { color: blue; }
+input, button { padding: 10px; margin: 5px; }
+button { background: blue; color: white; }
+</style>
+</head>
+<body>
+<h2>Library Management</h2>
+<input id="book" placeholder="Enter book name">
+<button onclick="search()">Search</button>
+<p id="result"></p>
+<script>
+function search() {
+let b = document.getElementById("book").value;
+document.getElementById("result").innerHTML =
+(b == "Java" || b == "Python") ?
+"Book Available" : "Book Not Available";
+}
+</script>
+</body>
+</html>

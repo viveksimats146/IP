@@ -1,0 +1,48 @@
+
+<html>
+<head>
+<style>
+body {
+  font-family: Arial;
+  text-align: center;
+  background: lightblue;
+}
+h2 { color: darkblue; }
+input, select, button {
+  padding: 10px;
+  margin: 5px;
+}
+button {
+  background: darkblue;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<h2>Hospital Appointment Booking</h2>
+
+<input id="name" placeholder="Patient Name"><br>
+
+<select id="doctor">
+  <option>General Doctor</option>
+  <option>Cardiologist</option>
+  <option>Dentist</option>
+</select><br>
+
+<button onclick="book()">Book Appointment</button>
+
+<p id="result"></p>
+
+<script>
+function book() {
+  let n = document.getElementById("name").value;
+  let d = document.getElementById("doctor").value;
+
+  document.getElementById("result").innerHTML =
+    "Appointment booked for " + n + " with " + d;
+}
+</script>
+
+</body>
+</html>

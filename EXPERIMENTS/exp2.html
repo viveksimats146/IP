@@ -1,0 +1,29 @@
+
+<html>
+<head>
+<style>
+body { font-family: Arial; text-align: center; background: #fff3e0; }
+h2 { color: brown; }
+input, select, button { padding: 10px; margin: 5px; }
+button { background: brown; color: white; }
+</style>
+</head>
+<body>
+<h2>Hotel Room Booking</h2>
+<input id="name" placeholder="Enter Name"><br>
+<select id="room">
+<option>Single Room</option>
+<option>Double Room</option>
+</select><br>
+<button onclick="book()">Book Room</button>
+<p id="result"></p>
+<script>
+function book() {
+let n = document.getElementById("name").value;
+let r = document.getElementById("room").value;
+document.getElementById("result").innerHTML =
+"Room booked for " + n + ": " + r;
+}
+</script>
+</body>
+</html>
