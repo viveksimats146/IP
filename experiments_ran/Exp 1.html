@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Library Management System</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+
+background:url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1600&q=80');
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+color:white;
+
+}
+
+body::before{
+content:'';
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.65);
+z-index:-1;
+}
+
+nav{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 70px;
+background:rgba(0,0,0,.5);
+backdrop-filter:blur(8px);
+position:sticky;
+top:0;
+z-index:999;
+
+}
+
+.logo{
+
+font-size:28px;
+font-weight:bold;
+color:#00ffd5;
+
+}
+
+nav ul{
+
+display:flex;
+list-style:none;
+
+}
+
+nav ul li{
+
+margin-left:30px;
+
+}
+
+nav ul li a{
+
+color:white;
+text-decoration:none;
+font-weight:600;
+transition:.4s;
+
+}
+
+nav ul li a:hover{
+
+color:#00ffd5;
+
+}
+
+.hero{
+
+height:90vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+
+}
+
+.hero h1{
+
+font-size:60px;
+margin-bottom:20px;
+
+}
+
+.hero p{
+
+font-size:20px;
+margin-bottom:30px;
+
+}
+
+.btn{
+
+padding:15px 35px;
+background:#00ffd5;
+color:black;
+font-weight:bold;
+text-decoration:none;
+border-radius:50px;
+transition:.4s;
+
+}
+
+.btn:hover{
+
+background:white;
+transform:scale(1.05);
+
+}
+
+section{
+
+padding:70px;
+
+}
+
+.title{
+
+text-align:center;
+font-size:40px;
+margin-bottom:50px;
+
+}
+
+.search{
+
+text-align:center;
+margin-bottom:40px;
+
+}
+
+.search input{
+
+width:60%;
+padding:15px;
+border:none;
+border-radius:30px;
+font-size:18px;
+
+}
+
+.books{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+
+}
+
+.card{
+
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(10px);
+padding:25px;
+border-radius:20px;
+text-align:center;
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+background:rgba(255,255,255,.2);
+
+}
+
+.card img{
+
+width:100%;
+height:260px;
+object-fit:cover;
+border-radius:15px;
+margin-bottom:15px;
+
+}
+
+.card h3{
+
+margin-bottom:10px;
+
+}
+
+.card p{
+
+font-size:15px;
+margin-bottom:15px;
+
+}
+
+.card button{
+
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:#00ffd5;
+font-weight:bold;
+cursor:pointer;
+transition:.4s;
+
+}
+
+.card button:hover{
+
+background:white;
+
+}
+
+.features{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+
+}
+
+.feature{
+
+background:rgba(255,255,255,.15);
+padding:30px;
+border-radius:20px;
+text-align:center;
+
+}
+
+.feature h2{
+
+margin-bottom:15px;
+
+}
+
+.login{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+gap:40px;
+
+}
+
+.form{
+
+background:rgba(255,255,255,.15);
+padding:30px;
+border-radius:20px;
+
+}
+
+.form h2{
+
+text-align:center;
+margin-bottom:20px;
+
+}
+
+.form input{
+
+width:100%;
+padding:15px;
+margin-bottom:15px;
+border:none;
+border-radius:10px;
+
+}
+
+.form button{
+
+width:100%;
+padding:15px;
+background:#00ffd5;
+border:none;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+border-radius:10px;
+
+}
+
+.contact{
+
+background:rgba(255,255,255,.15);
+padding:40px;
+border-radius:20px;
+
+}
+
+.contact input,
+.contact textarea{
+
+width:100%;
+padding:15px;
+margin-bottom:20px;
+border:none;
+border-radius:10px;
+
+}
+
+.contact button{
+
+padding:15px 40px;
+background:#00ffd5;
+border:none;
+font-weight:bold;
+cursor:pointer;
+border-radius:30px;
+
+}
+
+footer{
+
+background:black;
+text-align:center;
+padding:25px;
+margin-top:70px;
+
+}
+
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:40px;
+
+}
+
+nav{
+
+flex-direction:column;
+
+}
+
+nav ul{
+
+margin-top:15px;
+
+}
+
+nav ul li{
+
+margin:10px;
+
+}
+
+.search input{
+
+width:100%;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+📚 LibraryPro
+</div>
+
+<ul>
+
+<li><a href="#">Home</a></li>
+<li><a href="#books">Books</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#login">Login</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<div>
+
+<h1>Library Management System</h1>
+
+<p>
+
+Search books, borrow books, manage users and
+maintain your complete digital library.
+
+</p>
+
+<a href="#books" class="btn">
+Explore Library
+</a>
+
+</div>
+
+</section>
+
+<section id="books">
+
+<h1 class="title">
+Popular Books
+</h1>
+
+<div class="search">
+
+<input
+type="text"
+id="search"
+placeholder="Search Books..."
+onkeyup="searchBook()">
+
+</div>
+
+<div class="books" id="bookList">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=700&q=80">
+
+<h3>Database Management</h3>
+
+<p>
+
+Learn SQL, ER Models,
+Normalization and Transactions.
+
+</p>
+
+<button>
+Borrow
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=700&q=80">
+
+<h3>Python Programming</h3>
+
+<p>
+
+Complete guide for Python,
+Machine Learning and AI.
+
+</p>
+
+<button>
+
+Borrow
+
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=700&q=80">
+
+<h3>Operating System</h3>
+
+<p>
+
+Process Scheduling,
+Memory Management,
+Deadlocks.
+
+</p>
+
+<button>
+
+Borrow
+
+</button>
+
+</div>
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=700&q=80">
+
+<h3>Computer Networks</h3>
+
+<p>
+
+Networking concepts,
+Protocols and Internet technologies.
+
+</p>
+
+<button>
+
+Borrow
+
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1526243741027-444d633d7365?auto=format&fit=crop&w=700&q=80">
+
+<h3>Artificial Intelligence</h3>
+
+<p>
+
+Machine Learning,
+Deep Learning and Data Science.
+
+</p>
+
+<button>
+
+Borrow
+
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&w=700&q=80">
+
+<h3>Web Development</h3>
+
+<p>
+
+HTML, CSS,
+JavaScript and Responsive Design.
+
+</p>
+
+<button>
+
+Borrow
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="features">
+
+<h1 class="title">
+
+Library Features
+
+</h1>
+
+<div class="features">
+
+<div class="feature">
+
+<h2>📖 Book Search</h2>
+
+<p>
+
+Find books instantly using title,
+author or category.
+
+</p>
+
+</div>
+
+<div class="feature">
+
+<h2>👨‍🎓 Student Login</h2>
+
+<p>
+
+Students can login and
+manage borrowed books.
+
+</p>
+
+</div>
+
+<div class="feature">
+
+<h2>📚 Digital Library</h2>
+
+<p>
+
+Access eBooks and
+study materials anytime.
+
+</p>
+
+</div>
+
+<div class="feature">
+
+<h2>💰 Fine Management</h2>
+
+<p>
+
+Automatically calculate
+late return penalties.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="login">
+
+<h1 class="title">
+
+Login Portal
+
+</h1>
+
+<div class="login">
+
+<div class="form">
+
+<h2>
+
+Student Login
+
+</h2>
+
+<input
+type="text"
+placeholder="Username">
+
+<input
+type="password"
+placeholder="Password">
+
+<button onclick="login()">
+
+Login
+
+</button>
+
+</div>
+
+<div class="form">
+
+<h2>
+
+New Registration
+
+</h2>
+
+<input
+type="text"
+placeholder="Full Name">
+
+<input
+type="email"
+placeholder="Email">
+
+<input
+type="password"
+placeholder="Password">
+
+<button>
+
+Register
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h1 class="title">
+
+Contact Library
+
+</h1>
+
+<div class="contact">
+
+<input
+type="text"
+placeholder="Your Name">
+
+<input
+type="email"
+placeholder="Your Email">
+
+<textarea
+rows="6"
+placeholder="Message"></textarea>
+
+<button onclick="message()">
+
+Send Message
+
+</button>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>
+
+LibraryPro Management System
+
+</h2>
+
+<p>
+
+© 2026 All Rights Reserved
+
+</p>
+
+</footer>
+
+<script>
+
+function login(){
+
+alert("Login Successful!");
+
+}
+
+function message(){
+
+alert("Message Sent Successfully!");
+
+}
+
+function searchBook(){
+
+let input=document.getElementById("search").value.toLowerCase();
+
+let cards=document.querySelectorAll(".card");
+
+cards.forEach(function(card){
+
+let title=card.querySelector("h3").innerText.toLowerCase();
+
+if(title.indexOf(input)>-1){
+
+card.style.display="block";
+
+}
+
+else{
+
+card.style.display="none";
+
+}
+
+});
+
+}
+
+</script>
+
+</body>
+
+</html>

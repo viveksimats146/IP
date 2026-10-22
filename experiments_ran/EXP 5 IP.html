@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SkyWings Airlines</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+background:url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1600&q=80");
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+color:white;
+
+}
+
+body::before{
+
+content:'';
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(rgba(0,25,60,.75),rgba(0,0,0,.75));
+z-index:-1;
+
+}
+
+header{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 70px;
+position:absolute;
+width:100%;
+top:0;
+
+}
+
+.logo{
+
+font-size:32px;
+font-weight:bold;
+color:#00e5ff;
+
+}
+
+nav a{
+
+color:white;
+text-decoration:none;
+margin-left:30px;
+font-weight:600;
+transition:.4s;
+
+}
+
+nav a:hover{
+
+color:#00e5ff;
+
+}
+
+.home{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:120px 70px;
+min-height:100vh;
+
+}
+
+.content{
+
+width:50%;
+
+}
+
+.content h1{
+
+font-size:65px;
+margin-bottom:20px;
+line-height:1.2;
+
+}
+
+.content p{
+
+font-size:18px;
+margin-bottom:30px;
+
+}
+
+.content button{
+
+padding:15px 35px;
+border:none;
+background:#00e5ff;
+font-size:18px;
+font-weight:bold;
+border-radius:40px;
+cursor:pointer;
+
+}
+
+.search-box{
+
+width:420px;
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(15px);
+padding:30px;
+border-radius:25px;
+
+}
+
+.search-box h2{
+
+text-align:center;
+margin-bottom:20px;
+
+}
+
+.search-box input,
+.search-box select{
+
+width:100%;
+padding:14px;
+margin-bottom:15px;
+border:none;
+border-radius:10px;
+font-size:16px;
+
+}
+
+.search-box button{
+
+width:100%;
+padding:15px;
+background:#00e5ff;
+border:none;
+font-size:18px;
+font-weight:bold;
+border-radius:10px;
+cursor:pointer;
+
+}
+
+section{
+
+padding:80px;
+
+}
+
+.title{
+
+text-align:center;
+font-size:42px;
+margin-bottom:45px;
+
+}
+
+.cards{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+
+}
+
+.card{
+
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(10px);
+border-radius:20px;
+overflow:hidden;
+transition:.4s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.card img{
+
+width:100%;
+height:220px;
+object-fit:cover;
+
+}
+
+.info{
+
+padding:20px;
+
+}
+
+.info h2{
+
+margin-bottom:10px;
+
+}
+
+.price{
+
+color:#00e5ff;
+font-size:24px;
+font-weight:bold;
+margin:15px 0;
+
+}
+
+.info button{
+
+padding:12px 30px;
+border:none;
+background:#00e5ff;
+border-radius:30px;
+font-weight:bold;
+cursor:pointer;
+
+}
+
+@media(max-width:900px){
+
+.home{
+
+flex-direction:column;
+text-align:center;
+
+}
+
+.content{
+
+width:100%;
+margin-bottom:40px;
+
+}
+
+.search-box{
+
+width:100%;
+
+}
+
+header{
+
+flex-direction:column;
+
+}
+
+nav{
+
+margin-top:15px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+✈ SkyWings
+
+</div>
+
+<nav>
+
+<a href="#">Home</a>
+
+<a href="#offers">Offers</a>
+
+<a href="#booking">Booking</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+</header>
+
+<div class="home">
+
+<div class="content">
+
+<h1>
+
+Fly Beyond<br>
+
+Your Dreams
+
+</h1>
+
+<p>
+
+Book domestic and international flights at the best prices with SkyWings Airlines.
+
+</p>
+
+<button onclick="explore()">
+
+Explore Flights
+
+</button>
+
+</div>
+
+<div class="search-box">
+
+<h2>
+
+Flight Search
+
+</h2>
+
+<input type="text" placeholder="From">
+
+<input type="text" placeholder="To">
+
+<input type="date">
+
+<select>
+
+<option>Economy</option>
+
+<option>Premium Economy</option>
+
+<option>Business Class</option>
+
+<option>First Class</option>
+
+</select>
+
+<button onclick="searchFlight()">
+
+Search Flight
+
+</button>
+
+</div>
+
+</div>
+
+<section id="offers">
+
+<h1 class="title">
+
+Popular Destinations
+
+</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80">
+
+<div class="info">
+
+<h2>Maldives</h2>
+
+<p>5 Days Luxury Vacation Package</p>
+
+<div class="price">
+
+₹24,999
+
+</div>
+
+<button onclick="book('Maldives')">
+
+Book Now
+
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?auto=format&fit=crop&w=800&q=80">
+
+<div class="info">
+
+<h2>Dubai</h2>
+
+<p>Special Summer Flight Offer</p>
+
+<div class="price">
+
+₹18,999
+
+</div>
+
+<button onclick="book('Dubai')">
+
+Book Now
+
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=800&q=80">
+
+<div class="info">
+
+<h2>Singapore</h2>
+
+<p>Round Trip Discount Available</p>
+
+<div class="price">
+
+₹29,999
+
+</div>
+
+<button onclick="book('Singapore')">
+
+Book Now
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section id="booking">
+
+<h1 class="title">
+
+Book Your Flight
+
+</h1>
+
+<div style="max-width:900px;margin:auto;background:rgba(255,255,255,.12);backdrop-filter:blur(15px);padding:35px;border-radius:20px;">
+
+<input type="text" placeholder="Passenger Name" style="width:100%;padding:15px;margin-bottom:15px;border:none;border-radius:10px;">
+
+<input type="email" placeholder="Email Address" style="width:100%;padding:15px;margin-bottom:15px;border:none;border-radius:10px;">
+
+<input type="tel" placeholder="Mobile Number" style="width:100%;padding:15px;margin-bottom:15px;border:none;border-radius:10px;">
+
+<select style="width:100%;padding:15px;margin-bottom:15px;border:none;border-radius:10px;">
+
+<option>Select Flight Class</option>
+
+<option>Economy</option>
+
+<option>Premium Economy</option>
+
+<option>Business Class</option>
+
+<option>First Class</option>
+
+</select>
+
+<input type="number" placeholder="Number of Passengers" style="width:100%;padding:15px;margin-bottom:20px;border:none;border-radius:10px;">
+
+<button onclick="confirmBooking()" style="width:100%;padding:15px;background:#00e5ff;border:none;border-radius:10px;font-size:18px;font-weight:bold;cursor:pointer;">
+
+Confirm Booking
+
+</button>
+
+</div>
+
+</section>
+
+<section>
+
+<h1 class="title">
+
+Why Choose SkyWings?
+
+</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<div class="info">
+
+<h2>🛫 500+ Flights</h2>
+
+<p>
+
+Daily domestic and international flights.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="info">
+
+<h2>💺 Comfortable Seats</h2>
+
+<p>
+
+Premium comfort with extra leg room.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="info">
+
+<h2>⭐ 24×7 Support</h2>
+
+<p>
+
+Dedicated customer support anytime.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h1 class="title">
+
+Customer Reviews
+
+</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<div class="info">
+
+<h2>★★★★★</h2>
+
+<p>
+
+"Excellent service and easy booking process."
+
+</p>
+
+<b>- Rahul</b>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="info">
+
+<h2>★★★★★</h2>
+
+<p>
+
+"Affordable tickets with amazing comfort."
+
+</p>
+
+<b>- Priya</b>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="info">
+
+<h2>★★★★☆</h2>
+
+<p>
+
+"Smooth travel experience."
+
+</p>
+
+<b>- Arjun</b>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h1 class="title">
+
+Contact Us
+
+</h1>
+
+<div style="max-width:900px;margin:auto;background:rgba(255,255,255,.12);padding:30px;border-radius:20px;backdrop-filter:blur(15px);">
+
+<input type="text" placeholder="Your Name" style="width:100%;padding:15px;margin-bottom:15px;border:none;border-radius:10px;">
+
+<input type="email" placeholder="Email Address" style="width:100%;padding:15px;margin-bottom:15px;border:none;border-radius:10px;">
+
+<textarea rows="5" placeholder="Message" style="width:100%;padding:15px;margin-bottom:20px;border:none;border-radius:10px;"></textarea>
+
+<button onclick="sendMessage()" style="width:100%;padding:15px;background:#00e5ff;border:none;border-radius:10px;font-size:18px;font-weight:bold;cursor:pointer;">
+
+Send Message
+
+</button>
+
+</div>
+
+</section>
+
+<footer style="background:#02182b;padding:35px;text-align:center;">
+
+<h2>
+
+✈ SkyWings Airlines
+
+</h2>
+
+<br>
+
+<p>
+
+📍 Chennai, India
+
+</p>
+
+<p>
+
+📧 support@skywings.com
+
+</p>
+
+<p>
+
+☎ +91 9876543210
+
+</p>
+
+<br>
+
+<p>
+
+© 2026 SkyWings Airlines | All Rights Reserved
+
+</p>
+
+</footer>
+
+<script>
+
+function explore(){
+
+alert("Explore Amazing Flight Deals!");
+
+}
+
+function searchFlight(){
+
+alert("Searching Available Flights...");
+
+}
+
+function book(place){
+
+alert("Flight to " + place + " Selected!");
+
+}
+
+function confirmBooking(){
+
+alert("Your Flight Ticket has been Booked Successfully!");
+
+}
+
+function sendMessage(){
+
+alert("Thank you! We will contact you soon.");
+
+}
+
+</script>
+
+</body>
+
+</html>

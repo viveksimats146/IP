@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TechSavvy Electronics</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#0b0f19;
+color:white;
+}
+
+header{
+background:#121826;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 3px 15px rgba(0,255,255,.2);
+}
+
+.logo{
+font-size:30px;
+font-weight:bold;
+color:#00e5ff;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+margin-left:25px;
+font-weight:bold;
+transition:.3s;
+}
+
+nav a:hover{
+color:#00e5ff;
+}
+
+.hero{
+
+height:95vh;
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+padding:60px;
+background:linear-gradient(135deg,#0b0f19,#1d3557);
+
+}
+
+.hero-text h1{
+
+font-size:60px;
+color:#00e5ff;
+margin-bottom:20px;
+
+}
+
+.hero-text p{
+
+font-size:20px;
+line-height:1.8;
+margin-bottom:30px;
+
+}
+
+.hero-text button{
+
+padding:15px 35px;
+border:none;
+background:#00e5ff;
+color:black;
+font-size:18px;
+font-weight:bold;
+border-radius:40px;
+cursor:pointer;
+
+}
+
+.hero img{
+
+width:100%;
+border-radius:20px;
+
+}
+
+section{
+
+padding:70px;
+
+}
+
+.title{
+
+text-align:center;
+font-size:42px;
+margin-bottom:40px;
+color:#00e5ff;
+
+}
+
+.categories{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+
+}
+
+.box{
+
+background:#182338;
+padding:30px;
+border-radius:20px;
+text-align:center;
+transition:.4s;
+
+}
+
+.box:hover{
+
+transform:translateY(-8px);
+box-shadow:0 5px 20px rgba(0,255,255,.3);
+
+}
+
+.box h2{
+
+margin-bottom:15px;
+
+}
+
+.products{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+
+}
+
+.product{
+
+background:#182338;
+border-radius:20px;
+overflow:hidden;
+
+}
+
+.product img{
+
+width:100%;
+height:220px;
+object-fit:cover;
+
+}
+
+.info{
+
+padding:20px;
+text-align:center;
+
+}
+
+.price{
+
+color:#00e5ff;
+font-size:24px;
+font-weight:bold;
+margin:15px 0;
+
+}
+
+.info button{
+
+padding:12px 30px;
+background:#00e5ff;
+border:none;
+border-radius:30px;
+font-weight:bold;
+cursor:pointer;
+
+}
+
+@media(max-width:900px){
+
+.hero{
+
+grid-template-columns:1fr;
+text-align:center;
+
+}
+
+header{
+
+flex-direction:column;
+
+}
+
+nav{
+
+margin-top:15px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+⚡ TechSavvy
+
+</div>
+
+<nav>
+
+<a href="#">Home</a>
+<a href="#categories">Categories</a>
+<a href="#products">Products</a>
+<a href="#cart">Cart</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+</header>
+
+<div class="hero">
+
+<div class="hero-text">
+
+<h1>
+
+Latest Electronic Gadgets
+
+</h1>
+
+<p>
+
+Discover smartphones, laptops, smart watches, gaming accessories and much more with exclusive online offers.
+
+</p>
+
+<button onclick="shopNow()">
+
+Shop Now
+
+</button>
+
+</div>
+
+<div>
+
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80">
+
+</div>
+
+</div>
+
+<section id="categories">
+
+<h1 class="title">
+
+Shop By Category
+
+</h1>
+
+<div class="categories">
+
+<div class="box">
+
+<h2>📱 Smartphones</h2>
+
+<p>Latest Android & iPhone Models</p>
+
+</div>
+
+<div class="box">
+
+<h2>💻 Laptops</h2>
+
+<p>Gaming & Professional Laptops</p>
+
+</div>
+
+<div class="box">
+
+<h2>⌚ Smart Watches</h2>
+
+<p>Fitness & Premium Wearables</p>
+
+</div>
+
+<div class="box">
+
+<h2>🎧 Accessories</h2>
+
+<p>Headphones, Chargers & More</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="products">
+
+<h1 class="title">
+
+Featured Products
+
+</h1>
+
+<div class="products">
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=80">
+
+<div class="info">
+
+<h2>iPhone 16</h2>
+
+<p>128GB | A18 Chip</p>
+
+<div class="price">
+
+₹79,999
+
+</div>
+
+<button onclick="addCart('iPhone 16')">
+
+Add to Cart
+
+</button>
+
+</div>
+
+</div>
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80">
+
+<div class="info">
+
+<h2>Gaming Laptop</h2>
+
+<p>16GB RAM | RTX Graphics</p>
+
+<div class="price">
+
+₹94,999
+
+</div>
+
+<button onclick="addCart('Gaming Laptop')">
+
+Add to Cart
+
+</button>
+
+</div>
+
+</div>
+
+<div class="product">
+
+<img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=900&q=80">
+
+<div class="info">
+
+<h2>Smart Watch</h2>
+
+<p>Heart Rate & GPS</p>
+
+<div class="price">
+
+₹8,999
+
+</div>
+
+<button onclick="addCart('Smart Watch')">
+
+Add to Cart
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section id="cart">
+
+<h1 class="title">
+
+Shopping Cart
+
+</h1>
+
+<div style="max-width:900px;margin:auto;background:#182338;padding:35px;border-radius:20px;">
+
+<input type="text" placeholder="Customer Name" style="width:100%;padding:15px;margin-bottom:15px;border:none;border-radius:10px;">
+
+<input type="email" placeholder="Email Address" style="width:100%;padding:15px;margin-bottom:15px;border:none;border-radius:10px;">
+
+<select style="width:100%;padding:15px;margin-bottom:15px;border:none;border-radius:10px;">
+
+<option>Select Product</option>
+<option>iPhone 16</option>
+<option>Gaming Laptop</option>
+<option>Smart Watch</option>
+
+</select>
+
+<input type="number" placeholder="Quantity" style="width:100%;padding:15px;margin-bottom:15px;border:none;border-radius:10px;">
+
+<textarea rows="4" placeholder="Delivery Address" style="width:100%;padding:15px;margin-bottom:20px;border:none;border-radius:10px;"></textarea>
+
+<button onclick="checkout()" style="width:100%;padding:15px;background:#00e5ff;border:none;border-radius:10px;font-size:18px;font-weight:bold;cursor:pointer;">
+
+Proceed to Checkout
+
+</button>
+
+</div>
+
+</section>
+
+<section>
+
+<h1 class="title">
+
+Why Shop With Us?
+
+</h1>
+
+<div class="categories">
+
+<div class="box">
+
+<h2>🚚 Fast Delivery</h2>
+
+<p>
+
+Delivery across India within a few days.
+
+</p>
+
+</div>
+
+<div class="box">
+
+<h2>🔒 Secure Payments</h2>
+
+<p>
+
+Safe online payment with multiple options.
+
+</p>
+
+</div>
+
+<div class="box">
+
+<h2>🎁 Best Offers</h2>
+
+<p>
+
+Exclusive discounts on top electronic brands.
+
+</p>
+
+</div>
+
+<div class="box">
+
+<h2>📦 Order Tracking</h2>
+
+<p>
+
+Track your order status anytime.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h1 class="title">
+
+Customer Reviews
+
+</h1>
+
+<div class="products">
+
+<div class="product">
+
+<div class="info">
+
+<h2>★★★★★</h2>
+
+<p>
+
+"Excellent products with genuine quality."
+
+</p>
+
+<b>- Rahul</b>
+
+</div>
+
+</div>
+
+<div class="product">
+
+<div class="info">
+
+<h2>★★★★★</h2>
+
+<p>
+
+"Fast delivery and affordable prices."
+
+</p>
+
+<b>- Priya</b>
+
+</div>
+
+</div>
+
+<div class="product">
+
+<div class="info">
+
+<h2>★★★★☆</h2>
+
+<p>
+
+"Great shopping experience."
+
+</p>
+
+<b>- Arjun</b>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h1 class="title">
+
+Contact Us
+
+</h1>
+
+<div style="max-width:900px;margin:auto;background:#182338;padding:35px;border-radius:20px;">
+
+<input type="text" placeholder="Your Name" style="width:100%;padding:15px;margin-bottom:15px;border:none;border-radius:10px;">
+
+<input type="email" placeholder="Email Address" style="width:100%;padding:15px;margin-bottom:15px;border:none;border-radius:10px;">
+
+<textarea rows="5" placeholder="Your Message" style="width:100%;padding:15px;margin-bottom:20px;border:none;border-radius:10px;"></textarea>
+
+<button onclick="sendMessage()" style="width:100%;padding:15px;background:#00e5ff;border:none;border-radius:10px;font-size:18px;font-weight:bold;cursor:pointer;">
+
+Send Message
+
+</button>
+
+</div>
+
+</section>
+
+<footer style="background:#121826;color:white;text-align:center;padding:30px;">
+
+<h2>
+
+⚡ TechSavvy Electronics
+
+</h2>
+
+<br>
+
+<p>
+
+📍 Chennai, Tamil Nadu
+
+</p>
+
+<p>
+
+📧 support@techsavvy.com
+
+</p>
+
+<p>
+
+☎ +91 9876543210
+
+</p>
+
+<br>
+
+<p>
+
+© 2026 TechSavvy Electronics | All Rights Reserved
+
+</p>
+
+</footer>
+
+<script>
+
+function shopNow(){
+
+alert("Welcome to TechSavvy Electronics!");
+
+}
+
+function addCart(product){
+
+alert(product + " added to your cart!");
+
+}
+
+function checkout(){
+
+alert("Order Placed Successfully!");
+
+}
+
+function sendMessage(){
+
+alert("Thank you! Your message has been sent.");
+
+}
+
+</script>
+
+</body>
+
+</html>

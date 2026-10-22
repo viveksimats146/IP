@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sweet Cake Shop</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#fff8f5;
+}
+
+header{
+background:linear-gradient(90deg,#ff6b81,#ff9f43);
+padding:20px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo{
+font-size:32px;
+font-weight:bold;
+color:white;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+margin-left:25px;
+font-weight:bold;
+}
+
+.hero{
+height:90vh;
+display:flex;
+justify-content:space-around;
+align-items:center;
+padding:50px;
+background:linear-gradient(to right,#fff0f3,#ffe8d6);
+}
+
+.hero-text{
+width:45%;
+}
+
+.hero-text h1{
+font-size:60px;
+color:#d63384;
+margin-bottom:20px;
+}
+
+.hero-text p{
+font-size:20px;
+margin-bottom:30px;
+color:#555;
+}
+
+.hero-text button{
+padding:15px 35px;
+border:none;
+background:#ff6b81;
+color:white;
+font-size:18px;
+border-radius:30px;
+cursor:pointer;
+}
+
+.hero img{
+width:420px;
+border-radius:30px;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+
+section{
+padding:70px;
+}
+
+.title{
+text-align:center;
+font-size:40px;
+color:#d63384;
+margin-bottom:40px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.card{
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.info{
+padding:20px;
+text-align:center;
+}
+
+.price{
+font-size:24px;
+font-weight:bold;
+color:#ff6b81;
+margin:15px 0;
+}
+
+.info button{
+padding:12px 30px;
+border:none;
+background:#ff6b81;
+color:white;
+border-radius:30px;
+cursor:pointer;
+}
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+height:auto;
+}
+
+.hero-text{
+width:100%;
+margin-bottom:30px;
+}
+
+.hero img{
+width:90%;
+}
+
+header{
+flex-direction:column;
+}
+
+nav{
+margin-top:15px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+🎂 Sweet Cake
+
+</div>
+
+<nav>
+
+<a href="#">Home</a>
+
+<a href="#cakes">Cakes</a>
+
+<a href="#order">Order</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+</header>
+
+<div class="hero">
+
+<div class="hero-text">
+
+<h1>
+
+Fresh Cakes Made With Love
+
+</h1>
+
+<p>
+
+Order delicious birthday, wedding and celebration cakes with doorstep delivery.
+
+</p>
+
+<button onclick="shopNow()">
+
+Order Now
+
+</button>
+
+</div>
+
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80">
+
+</div>
+
+<section id="cakes">
+
+<h1 class="title">
+
+Popular Cakes
+
+</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=800&q=80">
+
+<div class="info">
+
+<h2>Chocolate Cake</h2>
+
+<p>Rich chocolate cream cake.</p>
+
+<div class="price">
+
+₹799
+
+</div>
+
+<button onclick="buyCake('Chocolate Cake')">
+
+Buy Now
+
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=800&q=80">
+
+<div class="info">
+
+<h2>Strawberry Cake</h2>
+
+<p>Fresh strawberry delight.</p>
+
+<div class="price">
+
+₹699
+
+</div>
+
+<button onclick="buyCake('Strawberry Cake')">
+
+Buy Now
+
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1559622214-f8a9850965bb?auto=format&fit=crop&w=800&q=80">
+
+<div class="info">
+
+<h2>Vanilla Cake</h2>
+
+<p>Soft vanilla sponge cake.</p>
+
+<div class="price">
+
+₹599
+
+</div>
+
+<button onclick="buyCake('Vanilla Cake')">
+
+Buy Now
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<section id="order">
+
+<h1 class="title">
+
+Order Your Cake
+
+</h1>
+
+<div style="max-width:900px;margin:auto;background:white;padding:35px;border-radius:20px;box-shadow:0 5px 15px rgba(0,0,0,.2);">
+
+<input type="text" placeholder="Customer Name" style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
+
+<input type="tel" placeholder="Mobile Number" style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
+
+<select style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
+
+<option>Select Cake</option>
+
+<option>Chocolate Cake</option>
+
+<option>Strawberry Cake</option>
+
+<option>Vanilla Cake</option>
+
+</select>
+
+<input type="number" placeholder="Quantity" style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
+
+<textarea rows="4" placeholder="Delivery Address" style="width:100%;padding:15px;margin-bottom:20px;border:1px solid #ddd;border-radius:10px;"></textarea>
+
+<button onclick="placeOrder()" style="width:100%;padding:15px;background:#ff6b81;color:white;border:none;border-radius:10px;font-size:18px;font-weight:bold;cursor:pointer;">
+
+Place Order
+
+</button>
+
+</div>
+
+</section>
+
+<section>
+
+<h1 class="title">
+
+Why Choose Us?
+
+</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<div class="info">
+
+<h2>🎂 Fresh Cakes</h2>
+
+<p>
+
+Prepared daily with premium ingredients.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="info">
+
+<h2>🚚 Fast Delivery</h2>
+
+<p>
+
+Quick doorstep delivery within your city.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="info">
+
+<h2>🎉 Custom Designs</h2>
+
+<p>
+
+Birthday, wedding and anniversary cakes.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h1 class="title">
+
+Customer Reviews
+
+</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<div class="info">
+
+<h2>★★★★★</h2>
+
+<p>
+
+"The chocolate cake was delicious!"
+
+</p>
+
+<b>- Anjali</b>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="info">
+
+<h2>★★★★★</h2>
+
+<p>
+
+"Beautiful design and on-time delivery."
+
+</p>
+
+<b>- Rohit</b>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="info">
+
+<h2>★★★★☆</h2>
+
+<p>
+
+"Fresh and tasty cakes."
+
+</p>
+
+<b>- Sneha</b>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h1 class="title">
+
+Contact Us
+
+</h1>
+
+<div style="max-width:900px;margin:auto;background:white;padding:35px;border-radius:20px;box-shadow:0 5px 15px rgba(0,0,0,.2);">
+
+<input type="text" placeholder="Your Name" style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
+
+<input type="email" placeholder="Email Address" style="width:100%;padding:15px;margin-bottom:15px;border:1px solid #ddd;border-radius:10px;">
+
+<textarea rows="5" placeholder="Your Message" style="width:100%;padding:15px;margin-bottom:20px;border:1px solid #ddd;border-radius:10px;"></textarea>
+
+<button onclick="sendMessage()" style="width:100%;padding:15px;background:#ff6b81;color:white;border:none;border-radius:10px;font-size:18px;font-weight:bold;cursor:pointer;">
+
+Send Message
+
+</button>
+
+</div>
+
+</section>
+
+<footer style="background:#ff6b81;color:white;text-align:center;padding:30px;">
+
+<h2>
+
+🎂 Sweet Cake Shop
+
+</h2>
+
+<br>
+
+<p>
+
+📍 Chennai, Tamil Nadu
+
+</p>
+
+<p>
+
+📧 sweetcake@email.com
+
+</p>
+
+<p>
+
+☎ +91 9876543210
+
+</p>
+
+<br>
+
+<p>
+
+© 2026 Sweet Cake Shop | All Rights Reserved
+
+</p>
+
+</footer>
+
+<script>
+
+function shopNow(){
+
+alert("Welcome to Sweet Cake Shop!");
+
+}
+
+function buyCake(cake){
+
+alert(cake + " Added to Cart!");
+
+}
+
+function placeOrder(){
+
+alert("Your Cake Order has been Placed Successfully!");
+
+}
+
+function sendMessage(){
+
+alert("Thank You! We will contact you soon.");
+
+}
+
+</script>
+
+</body>
+
+</html>
