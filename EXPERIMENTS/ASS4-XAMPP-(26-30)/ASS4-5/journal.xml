@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<journal>
+    <name>International Journal of Scientific
+    and Social Excellence</name>
+    <printISSN>2395-1443</printISSN>
+    <onlineISSN>2395-1451</onlineISSN>
+
+    <articles>
+        <article>
+            <title>Research in Modern Technology</title>
+            <author>Arun Kumar</author>
+            <issue>Current Issue</issue>
+        </article>
+        <article>
+            <title>Social Science Development</title>
+            <author>Priya Sharma</author>
+            <issue>Archive</issue>
+        </article>
+    </articles>
+
+    <members></members>
+</journal>

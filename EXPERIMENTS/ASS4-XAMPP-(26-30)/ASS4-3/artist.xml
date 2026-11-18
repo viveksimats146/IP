@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<artist>
+    <name>Emily Harris</name>
+    <bio>Emily Harris is a creative visual artist
+    known for beautiful paintings and artwork.</bio>
+
+    <artworks>
+        <artwork>
+            <title>Nature Beauty</title>
+            <year>2024</year>
+            <description>A beautiful nature painting.</description>
+        </artwork>
+        <artwork>
+            <title>Modern Art</title>
+            <year>2025</year>
+            <description>A modern creative artwork.</description>
+        </artwork>
+    </artworks>
+
+    <news>
+        <item>New art exhibition coming soon.</item>
+        <item>New painting collection released.</item>
+    </news>
+</artist>

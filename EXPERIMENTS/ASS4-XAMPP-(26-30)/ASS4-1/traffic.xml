@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<traffic>
+    <users>
+        <user>
+            <username>arun</username>
+            <password>123</password>
+            <vehicle>TN01AB1234</vehicle>
+        </user>
+    <user><username>vivek</username><password>1234</password><vehicle>ap1234</vehicle></user></users>
+
+    <cases>
+    </cases>
+</traffic>

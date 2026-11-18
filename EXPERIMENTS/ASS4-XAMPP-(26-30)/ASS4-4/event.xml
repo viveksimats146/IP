@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<event>
+    <name>Technology Innovation Summit</name>
+    <venue>Chennai Convention Centre</venue>
+    <date>25 December 2026</date>
+    <purpose>To share knowledge about new technologies.</purpose>
+    <audience>Students, Developers and Professionals</audience>
+
+    <speakers>
+        <speaker>Dr. Arun Kumar</speaker>
+        <speaker>Ms. Priya Sharma</speaker>
+    </speakers>
+
+    <schedule>
+        <session>10:00 AM - Welcome Address</session>
+        <session>11:00 AM - Technology Session</session>
+        <session>02:00 PM - Guest Lecture</session>
+    </schedule>
+
+    <registrations></registrations>
+</event>
